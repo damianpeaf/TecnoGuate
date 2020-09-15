@@ -112,6 +112,7 @@ namespace Presentacion.Aplicacion
 
         private void button6_Click(object sender, EventArgs e)
         {
+            AbrirForm2(new Formularios.Reporte());
 
         }
     }

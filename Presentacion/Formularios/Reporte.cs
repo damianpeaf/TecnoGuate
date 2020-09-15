@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +21,16 @@ namespace Presentacion.Formularios
 
         private void Reporte_Load(object sender, EventArgs e)
         {
+            DominioTelefono telefono = new DominioTelefono();
 
-            this.reportViewer1.RefreshReport();
+            DataTable dt = telefono.ReporteTelefono();
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            ReportDataSource rp = new ReportDataSource("DataSet1", dt);
+            reportViewer1.LocalReport.DataSources.Add(rp);
+            reportViewer1.RefreshReport(); ;
         }
+
+       
     }
 }

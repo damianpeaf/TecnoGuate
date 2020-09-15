@@ -32,6 +32,35 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DesarrolloPipa|AnyCPU'">
+    <OutputPath>bin\DesarrolloPipa\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DesarrolloPipa|x64'">
+    <OutputPath>bin\x64\DesarrolloPipa\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -77,13 +106,10 @@
     <Compile Include="Formularios\Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\informe\BaseDatos.cs">
-      <DependentUpon>BaseDatos.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\informe\BaseDatos.Designer.cs">
+    <Compile Include="Formularios\informe\datos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BaseDatos.xsd</DependentUpon>
+      <DependentUpon>datos.xsd</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Mostrar.cs">
       <SubType>Form</SubType>
@@ -173,16 +199,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Formularios\informe\BaseDatos.xsc">
-      <DependentUpon>BaseDatos.xsd</DependentUpon>
+    <None Include="Formularios\informe\datos.xsc">
+      <DependentUpon>datos.xsd</DependentUpon>
     </None>
-    <None Include="Formularios\informe\BaseDatos.xsd">
+    <None Include="Formularios\informe\datos.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BaseDatos.Designer.cs</LastGenOutput>
+      <LastGenOutput>datos.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Formularios\informe\BaseDatos.xss">
-      <DependentUpon>BaseDatos.xsd</DependentUpon>
+    <None Include="Formularios\informe\datos.xss">
+      <DependentUpon>datos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -161,7 +161,7 @@ namespace Datos
             {
                 using (cn = new Conexion().IniciarConexion())
                 {
-                    string query = "";
+                    string query = "SELECT T.idTelefono, T.modelo, M.nombre as 'marca', T.stock, T.precio, (T.stock * T.precio) as 'total' From telefono T inner join marca M on T.marca = M.idMarca";
 
                     MySqlCommand comando = new MySqlCommand(query, cn);
 
